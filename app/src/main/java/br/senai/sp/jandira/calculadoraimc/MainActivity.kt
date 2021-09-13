@@ -4,22 +4,37 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //Linkando os edit text e botão
-        val editPeso = findViewById<EditText>(R.id.edit_peso)
-        val editAltura = findViewById<EditText>(R.id.edit_altura)
+        // criando as instancias das views
+        // para que possam ser manipuladas em kotlin
+        val editTextPeso = findViewById<EditText>(R.id.edit_peso)
+        val editTextAltura = findViewById<EditText>(R.id.edit_altura)
         val buttonCalcular = findViewById<Button>(R.id.button_calcular)
 
-        //chmando bloco de comando quando o botão for clicado
-        buttonCalcular.setOnClickListener{
-            //pegando texto do editPeso
-            Toast.makeText(this, editPeso.text.toString(), Toast.LENGTH_SHORT).show()
+        val textViewResultado = findViewById<TextView>(R.id.text_view_resultado)
+
+        // add um ouvinte de click no botão
+        buttonCalcular.setOnClickListener {
+            if (editTextPeso.text.isEmpty())
+            {
+                editTextPeso.error = "Peso é obrigatório"
+            } else if (editTextAltura.text.isEmpty())
+            {
+                editTextAltura.error = "Altura é obrigatório"
+            } else {
+                val peso = editTextPeso.text.toString().toInt()
+                val altura = editTextAltura.text.toString().toDouble()
+
+                val imc = peso / (altura*altura)
+
+                textViewResultado.text = String.format("%.2f", imc)
+            }
         }
     }
 }

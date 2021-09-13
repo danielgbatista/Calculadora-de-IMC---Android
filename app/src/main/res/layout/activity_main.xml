@@ -12,11 +12,11 @@
 
     <!-- Adicionando imagem-->
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/exercicios"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:src="@drawable/plano"
         android:layout_gravity="center"
-
+        android:layout_marginBottom="10dp"
 
     />
 
@@ -26,7 +26,7 @@
         android:layout_gravity="center"
         android:fontFamily="@font/montserrat"
         android:text="Índice de Massa Corporal"
-        android:textColor="#5C5C5C"
+        android:textColor="#FFFFFF"
         android:textSize="24sp" />
     <EditText
         android:id="@+id/edit_peso"
@@ -40,7 +40,7 @@
         android:inputType="numberDecimal"
         android:textColor="#5C5C5C"
         android:drawableStart="@drawable/ic_baseline_accessibility_new_24"
-        android:drawableTint="#494949"
+        android:drawableTint="#2C2C2C"
         android:drawablePadding="16dp"
         />
     <EditText
@@ -67,18 +67,19 @@
         android:background="@drawable/button_background"
         android:textSize="20dp"
         android:textAllCaps="false"
-        android:textColor="#5C5C5C"
+        android:textColor="#FFFFFF"
 
         />
     <TextView
         android:id="@+id/text_view_resultado"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="50dp"
         android:layout_gravity="center"
         android:background="@drawable/text_view_resultado"
-        android:text="22"
-        android:textSize="86dp"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="60dp"
         android:gravity="center"
         android:fontFamily="sans-serif-light"
 
